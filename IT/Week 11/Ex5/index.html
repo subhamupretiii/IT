@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <title>Exercise-5</title>
+
+</head>
+
+<body>
+    <label>Text: </label>
+        <input type="text" id="text" onkeyup="validate();">
+        <span id="nanornot"></span><br><br>
+    <label>Password :
+        <input name="password" id="password" type="password" onkeyup="check();" />
+    </label>
+    <br><br>
+    <label>Confirm password:
+        <input type="password" name="confirm_password" id="confirm_password" onkeyup="check();" />
+        <span id="message"></span>
+    </label>
+    <script>
+
+var x = document.getElementById("text");
+
+function validate(x) {
+    document.getElementById("nanornot").innerHTML = isNaN(x); 
+}
+
+var check = function () {
+  if (
+    document.getElementById("password").value ==
+    document.getElementById("confirm_password").value
+  ) {
+    document.getElementById("message").style.color = "green";
+    document.getElementById("message").innerHTML = "matching";
+  } else {
+    document.getElementById("message").style.color = "red";
+    document.getElementById("message").innerHTML = "not matching";
+  }
+};
+
+    </script>
+</body>
+
+</html>

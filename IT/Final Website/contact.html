@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact - Your Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="form-validation.js" defer></script>
+</head>
+<body>
+    <nav>
+        <ul id="main-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li class="current"><a href="contact.html">Contact</a></li>
+            <!-- Add other pages here -->
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Contact Us</h1>
+    </header>
+
+    <main>
+        <form id="contactForm" novalidate>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My IT final Website</p>
+        <a href="mailto:subham23@tbc.edu.np">subham23@tbc.edu.np</a>
+        <p>Phone: +977 1000</p>
+        <!-- Footer details -->
+    </footer>
+
+    <!-- JavaScript for Form Validation -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.getElementById('contactForm');
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent the default form submit action
+
+                if (!form.checkValidity()) {
+                    alert('Please fill out the form correctly.');
+                    return;
+                }
+
+                // Form submitted successfully
+                const formData = new FormData(form);
+                const name = formData.get('name');
+                alert(`Thank you for your form, ${name}! We'll get back to you soon.`);
+                form.reset(); // Reset the form after submission
+            });
+        });
+    </script>
+</body>
+</html>
